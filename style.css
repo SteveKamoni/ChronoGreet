@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-sect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: antiquewhite;
+  width: auto;
+  height: 100vh;
+}
+
+.greet {
+  margin-bottom: 15rem;
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.clock {
+  font-size: 2.5em;
+  word-spacing: 2.5rem;
+}
+
+.btn {
+  width: 150px;
+  height: 30px;
+  margin-top: 5rem;
+  border-radius: 0.3rem;
+  font-size: 1.3em;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
