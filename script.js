@@ -27,7 +27,7 @@ updateTime();
 
 setInterval(updateTime, 1000);
 
-button.addEventListener("click", () => {
+window.addEventListener("load", () => {
   const now = new Date();
   const hour = now.getHours();
   const minute = now.getMinutes();
@@ -37,7 +37,7 @@ button.addEventListener("click", () => {
   if (hour > 1 && hour < 12) {
     greetText.textContent = `Good Morning, right now its currently ${hour} : ${formatedMinutes} AM`;
   } else if (hour > 12 && hour < 15) {
-    greetText.textContent = `Good Afternoon, Right now its currently ${hour}: ${formatedMinutes} PM`;
+    greetText.innerHTML = `<div style="text-align:center">Good Afternoon,</div> <br> Right now its currently ${hour}: ${formatedMinutes} PM`;
   } else if (hour > 15) {
     greetText.textContent = `Good Eveining! Right now its currently ${hour} : ${formatedMinutes} PM`;
   }
