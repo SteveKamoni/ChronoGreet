@@ -35,10 +35,28 @@ window.addEventListener("load", () => {
   const formatedMinutes = minute.toString().padStart(2, "0");
 
   if (hour > 1 && hour < 12) {
-    greetText.textContent = `Good Morning, right now its currently ${hour} : ${formatedMinutes} AM`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Morning,</div> <br> right now its currently ${hour} : ${formatedMinutes} AM</section>`;
   } else if (hour > 12 && hour < 15) {
-    greetText.innerHTML = `<div style="text-align:center">Good Afternoon,</div> <br> Right now its currently ${hour}: ${formatedMinutes} PM`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Afternoon,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
   } else if (hour > 15) {
-    greetText.textContent = `Good Eveining! Right now its currently ${hour} : ${formatedMinutes} PM`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evining!,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
   }
 });
+
+// ? fade section
+
+function handleScroll() {
+  const elements = document.querySelectorAll(".fade-in");
+
+  elements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      element.classList.add("visible");
+    }
+  });
+}
+
+window.addEventListener("scroll", handleScroll);
+
+// Trigger the scroll event on load to handle elements already in view
+window.addEventListener("load", handleScroll);
