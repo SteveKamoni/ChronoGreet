@@ -35,11 +35,11 @@ window.addEventListener("load", () => {
   const formatedMinutes = minute.toString().padStart(2, "0");
 
   if (hour > 1 && hour < 12) {
-    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Morning,</div> <br> right now its currently ${hour} : ${formatedMinutes} AM</section>`;
-  } else if (hour > 12 && hour < 15) {
-    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Afternoon,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
-  } else if (hour > 15) {
-    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evining!,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Morning☀️,</div> <br> right now its currently ${hour} : ${formatedMinutes} AM</section>`;
+  } else if (hour > 12 && hour < 17) {
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good AFternoon🌇,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
+  } else {
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evening🌃,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
   }
 });
 

@@ -35,15 +35,29 @@ body {
 }
 
 .greet {
-  margin-bottom: 15rem;
-  font-size: 3em;
+  margin-bottom: 13rem;
+  font-size: 3.8em;
   font-weight: 600;
+  font-family: "Anton", sans-serif;
+  word-spacing: 0.6rem;
+  letter-spacing: 0.5rem;
 }
 
 .clock {
+  width: 550px;
+  text-align: center;
   font-size: 3.5em;
   font-weight: 800;
+  font-family: "Handjet", sans-serif;
   word-spacing: 2.5rem;
+  padding: 1rem;
+  background: rgb(52, 73, 94);
+  background: linear-gradient(
+    90deg,
+    rgba(52, 73, 94, 0.6801492471988796) 100%,
+    rgba(239, 235, 235, 1) 100%
+  );
+  border-radius: 1rem;
 }
 
 .btn {
