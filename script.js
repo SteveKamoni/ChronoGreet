@@ -39,7 +39,7 @@ window.addEventListener("load", () => {
   } else if (hour > 12 && hour < 17) {
     greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good AFternoon🌇,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
   } else {
-    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evening🌃,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evening🌃,</div> <br>Rright Now Its Currently ${hour} : ${formatedMinutes} PM</section>`;
   }
 });
 
@@ -60,3 +60,6 @@ window.addEventListener("scroll", handleScroll);
 
 // Trigger the scroll event on load to handle elements already in view
 window.addEventListener("load", handleScroll);
+
+//* ideas to add
+// Add a modal on load and theere is a quote depending on the mood
