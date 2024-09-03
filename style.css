@@ -11,7 +11,7 @@
 /* body section */
 body {
   height: 100vh;
-  width: auto;
+  width: 100%;
   background-image: url(https://images.pexels.com/photos/1034426/pexels-photo-1034426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
   background-position: center;
   background-repeat: no-repeat;
@@ -94,4 +94,33 @@ body {
 .content2.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/** THEME SECTION  */
+
+.theme-sect {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.theme-sect span {
+  position: relative;
+  display: flex;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  border: solid 2px white;
+  text-align: center;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  z-index: 9;
 }
