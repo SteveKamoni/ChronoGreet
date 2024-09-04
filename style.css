@@ -104,9 +104,13 @@ body {
   justify-content: flex-end;
 }
 
-.theme-sect span {
-  position: relative;
+.div-span {
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown {
@@ -123,4 +127,17 @@ body {
   display: none;
   overflow: hidden;
   z-index: 9;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.default .light .dark {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+}
+
+.dropdown:hover .dropdown-content {
+  cursor: pointer;
+  display: block;
 }
