@@ -3,6 +3,10 @@ const Hours = document.querySelector(".hrs");
 const Minutes = document.querySelector(".min");
 const Seconds = document.querySelector(".sec");
 const button = document.querySelector(".btn");
+const defBtn = document.querySelector(".default");
+const lightBtn = document.querySelector(".light");
+const darkBtn = document.querySelector(".dark");
+const mainSect = document.querySelector(".main-sect");
 
 function updateTime() {
   // update the time
@@ -63,3 +67,11 @@ window.addEventListener("load", handleScroll);
 
 //* ideas to add
 // Add a modal on load and theere is a quote depending on the mood
+
+//* Theme secction
+
+defBtn.addEventListener("click", () => {});
+
+lightBtn.addEventListener("click", () => {
+  mainSect.classList.backgorundColor = "rgba(239, 235, 235, .5)";
+});
