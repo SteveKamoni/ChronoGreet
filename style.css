@@ -10,7 +10,7 @@
   --theme-cont-bdg: #593a27;
 }
 
-/* body section */
+/** body section */
 body {
   height: 100vh;
   width: 100%;
