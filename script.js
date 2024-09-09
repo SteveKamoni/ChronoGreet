@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
   } else if (hour > 12 && hour < 17) {
     greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good AFternoon🌇,</div> <br> right now its currently ${hour} : ${formatedMinutes} PM</section>`;
   } else {
-    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center" >Good Evening🌃,</div> <br>Rright Now Its Currently ${hour} : ${formatedMinutes} PM</section>`;
+    greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good Evening🌃,</div> <br>Rright Now Its Currently ${hour} : ${formatedMinutes} PM</section>`;
   }
 });
 
@@ -73,5 +73,6 @@ window.addEventListener("load", handleScroll);
 defBtn.addEventListener("click", () => {});
 
 lightBtn.addEventListener("click", () => {
-  mainSect.classList.backgorundColor = "rgba(239, 235, 235, .5)";
+  mainSect.style.backgroundColor = "rgba(239, 235, 235, .5)";
+  mainSect.style.color = "#e5e8e8";
 });
