@@ -7,6 +7,7 @@ const defBtn = document.querySelector(".default");
 const lightBtn = document.querySelector(".light");
 const darkBtn = document.querySelector(".dark");
 const mainSect = document.querySelector(".main-sect");
+const clock = document.querySelector(".clock");
 
 function updateTime() {
   // update the time
@@ -75,4 +76,14 @@ defBtn.addEventListener("click", () => {});
 lightBtn.addEventListener("click", () => {
   mainSect.style.backgroundColor = "rgba(239, 235, 235, .5)";
   mainSect.style.color = "#e5e8e8";
+  location.reload();
+});
+
+darkBtn.addEventListener("click", () => {
+  mainSect.style.backgroundImage =
+    "linear-gradient(90deg, rgba(23,32,42,0.85), rgba(44,62,80,1))";
+  mainSect.style.color = "#FF7E54";
+  clock.style.backgroundImage =
+    "linear-gradient(90deg, rgba(255,126,84,0.75), rgba(255,255,255,1))";
+  clock.style.color = "#17202A";
 });
