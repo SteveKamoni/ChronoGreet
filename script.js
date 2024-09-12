@@ -70,6 +70,8 @@ window.addEventListener("load", handleScroll);
 // Add a modal on load and theere is a quote depending on the mood
 
 //* Theme secction
+// todo use reload for smooth transitions
+// todo work on themes with beter color palette
 
 defBtn.addEventListener("click", () => {});
 
