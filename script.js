@@ -46,14 +46,24 @@ window.addEventListener("load", () => {
   } else {
     greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good Evening🌃,</div> <br>Rright Now Its Currently ${hour} : ${formatedMinutes} PM</section>`;
   }
-
-  const savedTheme = localStorage.getItem("theme");
-  const savedColor = localStorage.getItem("color");
-  if (savedTheme && savedColor) {
-    mainSect.style.backgroundColor = savedTheme;
-    mainSect.style.color = savedTheme;
-  }
 });
+const themes = {
+  default: {
+    background:
+      "linear-gradient(90deg, rgba(52, 73, 94, 0.5801492471988796) 100%, rgba(239, 235, 235,1)100%)",
+    color: "#f4f6f7",
+  },
+  dark: {
+    background: "linear-gradient(90deg, rgba(23,32,42,0.85), rgba(44,62,80,1))",
+    color: "#FF7E54",
+  },
+  light: {
+    background:
+      "linear-gradient(90deg, rgba(45,48,70,0.9009103641456583) 100%, rgba(255,255,255,1) 100%)",
+    color: "#e5e8e8",
+  },
+};
+localStorage.setItem("themes", JSON.stringify(themes));
 
 // ? fade section
 
@@ -77,31 +87,48 @@ window.addEventListener("load", handleScroll);
 // Add a modal on load and theere is a quote depending on the mood
 
 //* Theme secction
-//! use reload for smooth transitions
-//! work on themes with beter color palette
-// ! current system does not allow the themme to be consistent on reload, create new system
+//use reload for smooth transitions
+//work on themes with beter color palette
+//todo current system does not allow the themme to be consistent on reload, create new system
 
 defBtn.addEventListener("click", () => {
-  mainSect.style.backgroundImage = "  ";
+  const storedTheme = JSON.parse(localStorage.getItem("themes"));
+  const selectedTheme = storedTheme.default;
+
+  mainSect.style.background = selectedTheme.background;
+  mainSect.style.color = selectedTheme.color;
+
+  localStorage.setItem("selectedTheme", "default");
 });
 
 lightBtn.addEventListener("click", () => {
-  const theme = "rgba(239, 235, 235, .5)";
-  const color = "#e5e8e8";
+  const storedTheme = JSON.parse(localStorage.getItem("themes"));
+  const selectedTheme = storedTheme.light;
 
-  mainSect.style.backgroundColor = theme;
-  mainSect.style.color = color;
+  mainSect.style.background = selectedTheme.background;
+  mainSect.style.color = selectedTheme.color;
 
-  localStorage.setItem("theme", theme);
-  localStorage.setItem("color", color);
+  localStorage.setItem("selectedTheme", "light");
 });
 
 darkBtn.addEventListener("click", () => {
-  const darktheme =
-    "linear-gradient(90deg, rgba(23,32,42,0.85), rgba(44,62,80,1))";
-  const darkcolor = "#FF7E54";
-  mainSect.style.backgroundImage = darktheme;
-  mainSect.style.color = darkcolor;
-  localStorage.setItem("theme", darktheme);
-  localStorage.setItem("color", darkcolor);
+  const storedTheme = JSON.parse(localStorage.getItem("themes"));
+  const selectedTheme = storedTheme.dark;
+
+  mainSect.style.background = selectedTheme.background;
+  mainSect.style.color = selectedTheme.color;
+
+  localStorage.setItem("selectedTheme", "dark");
+});
+
+window.addEventListener("load", () => {
+  const savedThemeName = localStorage.getItem("selectedTheme");
+
+  if (savedThemeName) {
+    const storedThemes = JSON.parse(localStorage.getItem("themes"));
+
+    const savedTheme = storedThemes[savedThemeName];
+    mainSect.style.background = savedTheme.background;
+    mainSect.style.color = savedTheme.color;
+  }
 });
