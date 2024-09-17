@@ -183,4 +183,24 @@ body {
     font-size: 2em;
     text-align: center;
   }
+
+  .clock {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main-sect {
+    width: 100%;
+    height: 100%;
+  }
+
+  .greet {
+    font-size: 3.8em;
+    text-align: center;
+  }
+
+  .clock {
+    font-size: 3.5em;
+  }
 }
