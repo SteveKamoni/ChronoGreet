@@ -27,9 +27,10 @@ function updateTime() {
   Minutes.innerHTML = `${minutes}  :`;
   Seconds.innerHTML = `${seconds}`;
 }
-
+// function call
 updateTime();
 
+// function reference
 setInterval(updateTime, 1000);
 
 window.addEventListener("load", () => {
@@ -47,23 +48,6 @@ window.addEventListener("load", () => {
     greetText.innerHTML = `<section class="content2 fade-in"><div style="text-align:center">Good Evening🌃,</div> <br>Rright Now Its Currently ${hour} : ${formatedMinutes} PM</section>`;
   }
 });
-const themes = {
-  default: {
-    background:
-      "linear-gradient(90deg, rgba(52, 73, 94, 0.5801492471988796) 100%, rgba(239, 235, 235,1)100%)",
-    color: "#f4f6f7",
-  },
-  dark: {
-    background: "linear-gradient(90deg, rgba(23,32,42,0.85), rgba(44,62,80,1))",
-    color: "#FF7E54",
-  },
-  light: {
-    background:
-      "linear-gradient(90deg, rgba(45,48,70,0.9009103641456583) 100%, rgba(255,255,255,1) 100%)",
-    color: "#e5e8e8",
-  },
-};
-localStorage.setItem("themes", JSON.stringify(themes));
 
 // ? fade section
 
@@ -91,13 +75,36 @@ window.addEventListener("load", handleScroll);
 //work on themes with beter color palette
 //todo current system does not allow the themme to be consistent on reload, create new system
 
+//? Theme Section
+const themes = {
+  default: {
+    background:
+      "linear-gradient(90deg, rgba(52, 73, 94, 0.5801492471988796) 100%, rgba(239, 235, 235,1)100%)",
+    color: "#f4f6f7",
+  },
+  dark: {
+    background: "linear-gradient(90deg, rgba(23,32,42,0.85), rgba(44,62,80,1))",
+    color: "#FF7E54",
+  },
+  light: {
+    background:
+      "linear-gradient(90deg, rgba(45,48,70,0.9009103641456583) 100%, rgba(255,255,255,1) 100%)",
+    color: "#e5e8e8",
+  },
+};
+localStorage.setItem("themes", JSON.stringify(themes));
+
 defBtn.addEventListener("click", () => {
+  // calling the theme
   const storedTheme = JSON.parse(localStorage.getItem("themes"));
+  // store the theme
   const selectedTheme = storedTheme.default;
 
+  // use the theme
   mainSect.style.background = selectedTheme.background;
   mainSect.style.color = selectedTheme.color;
 
+  // saving the theme
   localStorage.setItem("selectedTheme", "default");
 });
 
@@ -121,6 +128,7 @@ darkBtn.addEventListener("click", () => {
   localStorage.setItem("selectedTheme", "dark");
 });
 
+// ensure the theme is saved on load
 window.addEventListener("load", () => {
   const savedThemeName = localStorage.getItem("selectedTheme");
 
