@@ -101,7 +101,7 @@ defBtn.addEventListener("click", () => {
   // store the theme
   const selectedTheme = storedTheme.default;
 
-  // use the theme
+  // use the theme by calling the object
   mainSect.style.background = selectedTheme.background;
   mainSect.style.color = selectedTheme.color;
 
